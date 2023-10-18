@@ -22,8 +22,8 @@ let birdAcceleration = 0.1;
 
 
 //Pipe variable
-let pipeX = 400;
-let pipeY = canvas.height - 200;
+let pipeX = 320 ;
+let pipeY = canvas.height - 400;
 
 //score and highScore variable
 let scoreDiv = document.getElementById('score-display');
@@ -156,7 +156,7 @@ function loop() {
     ctx.drawImage(flappyImg, birdX, birdY);
 
     //Draw Pipes
-    ctx.fillStyle = '#333';
+    ctx.fillStyle = '#967';
     ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
     ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
 
@@ -171,6 +171,8 @@ function loop() {
 
     // forgot to move the pipes
     pipeX -= 2;
+
+
     // if the pipe moves out of the frame we need reset the pipe
     if (pipeX < -50) {
         pipeX = 400;
